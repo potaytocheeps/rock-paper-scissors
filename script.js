@@ -38,3 +38,8 @@ function playRound(playerSelection, computerSelection)
 
     return message;
 }
+
+function getPlayerChoice()
+{
+    return prompt("Enter your choice of rock, paper, or scissors:");
+}
