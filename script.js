@@ -43,3 +43,40 @@ function getPlayerChoice()
 {
     return prompt("Enter your choice of rock, paper, or scissors:");
 }
+
+function playGame()
+{
+    let playerScore = 0;
+    let computerScore = 0;
+    let numberOfRoundsToPlay = 5;
+
+    for (let currentRound = 1; currentRound <= numberOfRoundsToPlay; currentRound++)
+    {
+        let roundResultMessage = playRound(getPlayerChoice(), getComputerChoice());
+        console.log(roundResultMessage);
+
+        if (roundResultMessage.includes("win"))
+        {
+            playerScore++;
+        }
+        else if (roundResultMessage.includes("lose"))
+        {
+            computerScore++;
+        }
+    }
+
+    if (playerScore > computerScore)
+    {
+        console.log("Congratulations! You won the game!");
+    }
+    else if (playerScore < computerScore)
+    {
+        console.log("You lost the game. Better luck next time!");
+    }
+    else
+    {
+        console.log("Game was a draw!");
+    }
+}
+
+playGame();
