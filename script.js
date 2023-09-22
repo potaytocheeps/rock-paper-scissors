@@ -5,10 +5,32 @@ function getComputerChoice()
     return choices[randomIndex];
 }
 
+function getPlayerChoice()
+{
+    let playerChoice = null;
+    let keepGoing = true;
+
+    // Validate player input
+    while(keepGoing)
+    {
+        // Convert player input to lowercase so that it will be case-insensitive
+        playerChoice = prompt("Enter your choice of rock, paper, or scissors:").toLowerCase();
+
+        if (playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors")
+        {
+            keepGoing = false;
+        }
+        else
+        {
+            alert("Invalid input. Make a choice between rock, paper, or scissors.");
+        }
+    }
+
+    return playerChoice;
+}
+
 function playRound(playerSelection, computerSelection)
 {
-    // Convert playerSelection to lowercase so that it will be case-insensitive
-    playerSelection = playerSelection.toLowerCase();
     let message = "";
 
     // The switch statement will choose between the three conditions available:
@@ -37,11 +59,6 @@ function playRound(playerSelection, computerSelection)
     }
 
     return message;
-}
-
-function getPlayerChoice()
-{
-    return prompt("Enter your choice of rock, paper, or scissors:");
 }
 
 function playGame()
