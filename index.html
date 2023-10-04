@@ -7,29 +7,34 @@
   <script src="./script.js" defer></script>
 </head>
 <body>
-  <div class="score-container">
-    <div class="score-text-container">
-      <p class="score-text">Player Score</p>
-      <p class="score-text">Computer Score</p>
+  <div class="container">
+    <div class="scores-container">
+      <div class="player-score-container">
+        <p class="player-score-text score-text">Player Score</p>
+        <p class="player-score score">0</p>
+      </div>
+      <div class="computer-score-container">
+        <p class="computer-score-text score-text">Computer Score</p>
+        <p class="computer-score score">0</p>
+      </div>
     </div>
-    <div class="score-number-container">
-      <p class="player-score">0</p>
-      <p class="computer-score">0</p>
+
+    <div class="button-container">
+      <button id="rock">Rock</button>
+      <button id="paper">Paper</button>
+      <button id="scissors">Scissors</button>
     </div>
-  </div>
 
-  <div class="button-container">
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-  </div>
+    <div class="output-container">
+      <p class="output">
+        Make a selection to start the game.<br>
+        First to five points wins!
+      </p>
+    </div>
 
-  <div class="output-container">
-    <p class="output">Make a selection to play a round!</p>
-  </div>
-
-  <div class="match-result-output-container">
-    <p class="match-result-output"></p>
+    <div class="match-result-output-container">
+      <p class="match-result-output"></p>
+    </div>
   </div>
 </body>
 </html>

@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+  max-width: 700px;
+  flex: 1;
+}
+
+p {
+  margin: 0;
+}
+
+
+/* Scores Section */
+
+.scores-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 36px;
+}
+
+.player-score-container,
+.computer-score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-text {
+  font-size: 25px;
+}
+
+.score {
+  font-size: 40px;
+  margin: 12px 0;
+}
+
+
+/* Buttons Section */
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+  flex-wrap: wrap;
+  padding: 0 30px;
+}
+
+button {
+  padding: 8px 0;
+  min-width: 70px;
+  max-width: 100px;
+  flex: auto;
+}
+
+
+/* Output Section */
+
+.output-container {
+  font-size: 25px;
+}
+
+.match-result-output-container {
+  margin: 30px 0;
+  font-size: 30px;
+}
