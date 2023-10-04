@@ -5,31 +5,7 @@ function getComputerChoice()
     return choices[randomIndex];
 }
 
-function getPlayerChoice()
-{
-    let playerChoice = null;
-    let keepGoing = true;
-
-    // Validate player input
-    while(keepGoing)
-    {
-        // Convert player input to lowercase so that it will be case-insensitive
-        playerChoice = prompt("Enter your choice of rock, paper, or scissors:").toLowerCase();
-
-        if (playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors")
-        {
-            keepGoing = false;
-        }
-        else
-        {
-            alert("Invalid input. Make a choice between rock, paper, or scissors.");
-        }
-    }
-
-    return playerChoice;
-}
-
-function playRound(playerSelection, computerSelection)
+function compareSelections(playerSelection, computerSelection)
 {
     let message = "";
 
@@ -61,39 +37,22 @@ function playRound(playerSelection, computerSelection)
     return message;
 }
 
-function playGame()
+function playRound(event)
 {
-    let playerScore = 0;
-    let computerScore = 0;
-    let numberOfRoundsToPlay = 5;
+    let roundResultMessage = compareSelections(event.target.id, getComputerChoice());
+    let output = document.querySelector('.output');
 
-    for (let currentRound = 1; currentRound <= numberOfRoundsToPlay; currentRound++)
-    {
-        let roundResultMessage = playRound(getPlayerChoice(), getComputerChoice());
-        console.log(roundResultMessage);
+    output.textContent = roundResultMessage;
+}
 
-        if (roundResultMessage.includes("win"))
-        {
-            playerScore++;
-        }
-        else if (roundResultMessage.includes("lose"))
-        {
-            computerScore++;
-        }
-    }
+function initializeGame()
+{
+    const buttons = document.querySelectorAll('button');
 
-    if (playerScore > computerScore)
+    for (const button of buttons)
     {
-        console.log("Congratulations! You won the game!");
-    }
-    else if (playerScore < computerScore)
-    {
-        console.log("You lost the game. Better luck next time!");
-    }
-    else
-    {
-        console.log("Game was a draw!");
+        button.addEventListener('click', playRound);
     }
 }
 
-playGame();
+initializeGame();
