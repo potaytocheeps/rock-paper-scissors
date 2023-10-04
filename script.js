@@ -55,6 +55,17 @@ function playRound(event)
     }
 
     output.textContent = roundResultMessage;
+
+    // End game after a score of 5 is reached
+    if (Number(playerScore.textContent) >= 5 || Number(computerScore.textContent) >= 5)
+    {
+        const buttons = document.querySelectorAll('button');
+
+        for (const button of buttons)
+        {
+            button.disabled = true;
+        }
+    }
 }
 
 function initializeGame()
