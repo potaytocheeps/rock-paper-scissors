@@ -43,6 +43,7 @@ function playRound(event)
     let computerScore = document.querySelector('.computer-score');
     let roundResultMessage = compareSelections(event.target.id, getComputerChoice());
     let output = document.querySelector('.output');
+    let matchResultOutput = document.querySelector('.match-result-output');
 
     // Update scores in the DOM
     if (roundResultMessage.toLowerCase().includes("win"))
@@ -64,6 +65,15 @@ function playRound(event)
         for (const button of buttons)
         {
             button.disabled = true;
+        }
+
+        if (Number(playerScore.textContent) > Number(computerScore.textContent))
+        {
+            matchResultOutput.textContent = "Congratulations! You won the match!";
+        }
+        else
+        {
+            matchResultOutput.textContent = "You lost the match. Better luck next time!";
         }
     }
 }
