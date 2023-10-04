@@ -39,8 +39,20 @@ function compareSelections(playerSelection, computerSelection)
 
 function playRound(event)
 {
+    let playerScore = document.querySelector('.player-score');
+    let computerScore = document.querySelector('.computer-score');
     let roundResultMessage = compareSelections(event.target.id, getComputerChoice());
     let output = document.querySelector('.output');
+
+    // Update scores in the DOM
+    if (roundResultMessage.toLowerCase().includes("win"))
+    {
+        playerScore.textContent = Number(playerScore.textContent) + 1;
+    }
+    else if (roundResultMessage.toLowerCase().includes("lose"))
+    {
+        computerScore.textContent = Number(computerScore.textContent) + 1;
+    }
 
     output.textContent = roundResultMessage;
 }
