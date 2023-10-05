@@ -60,6 +60,12 @@ img {
   font-size: 40px;
 }
 
+.winning-selection {
+  border: 3px solid green;
+  border-radius: 100%;
+  padding: 5px;
+}
+
 
 /* Buttons Section */
 

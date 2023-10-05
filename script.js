@@ -7,6 +7,13 @@ function getComputerChoice()
 
 function compareSelections(playerSelection, computerSelection)
 {
+    const playerSelectionElement = document.querySelector('.player-selection');
+    const computerSelectionElement = document.querySelector('.computer-selection');
+
+    // Reset selections to remove border if they have one at the beginning of the round
+    playerSelectionElement.classList.remove('winning-selection');
+    computerSelectionElement.classList.remove('winning-selection');
+
     let message = "";
 
     // The switch statement will choose between the three conditions available:
@@ -19,12 +26,14 @@ function compareSelections(playerSelection, computerSelection)
         case (playerSelection === "paper" && computerSelection === "rock"):
         case (playerSelection === "scissors" && computerSelection === "paper"):
             message = `You win! ${playerSelection} beats ${computerSelection}.`;
+            playerSelectionElement.classList.add('winning-selection');
             break;
         // Player loss conditions
         case (playerSelection === "rock" && computerSelection === "paper"):
         case (playerSelection === "paper" && computerSelection === "scissors"):
         case (playerSelection === "scissors" && computerSelection === "rock"):
             message = `You lose! ${computerSelection} beats ${playerSelection}.`;
+            computerSelectionElement.classList.add('winning-selection');
             break;
         // Draw condition
         case (playerSelection === computerSelection):
