@@ -41,6 +41,26 @@ p {
 }
 
 
+/* Selection Container */
+
+.selection-container {
+  border: 2px solid black;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+img {
+  width: 125px;
+  height: auto;
+}
+
+.selection-text {
+  font-size: 40px;
+}
+
+
 /* Buttons Section */
 
 .button-container {
