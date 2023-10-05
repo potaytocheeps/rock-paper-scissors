@@ -115,7 +115,7 @@ img {
 
 .button-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 30px 0;
   flex-wrap: wrap;
   padding: 0 30px;
@@ -124,7 +124,8 @@ img {
 button {
   padding: 12px 0;
   min-width: 70px;
-  max-width: 100px;
+  max-width: 150px;
+  height: 50px;
   flex: auto;
   background-color: #F8E7E6;
   border: black outset 1px;
@@ -132,6 +133,7 @@ button {
   box-shadow: 3px 3px black;
   cursor: pointer;
   font-weight: bold;
+  font-size: 18px;
 }
 
 button:hover {
