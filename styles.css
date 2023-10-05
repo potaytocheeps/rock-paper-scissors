@@ -8,6 +8,7 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
+  background-color: #F8E7E6;
 }
 
 .container {
@@ -106,10 +107,29 @@ img {
 }
 
 button {
-  padding: 8px 0;
+  padding: 12px 0;
   min-width: 70px;
   max-width: 100px;
   flex: auto;
+  background-color: #F8E7E6;
+  border: black outset 1px;
+  border-radius: 8px;
+  box-shadow: 3px 3px black;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #d8cbcb;
+}
+
+button:active {
+  background-color: #bdb5b5;
+}
+
+button:disabled {
+  background-color: #F8E7E6;
+  cursor: default;
 }
 
 
