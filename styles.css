@@ -26,6 +26,7 @@ p {
   display: flex;
   justify-content: space-around;
   gap: 36px;
+  align-items: center;
 }
 
 .player-score-container,
@@ -33,6 +34,15 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 170px;
+}
+
+.round-text {
+  font-size: 20px;
+}
+
+.round-number {
+  font-size: 26px;
 }
 
 .score-text {
@@ -70,7 +80,7 @@ img {
 }
 
 .selection-text {
-  font-size: 40px;
+  font-size: 60px;
 }
 
 .winning-selection {

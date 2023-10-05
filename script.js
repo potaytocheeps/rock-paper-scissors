@@ -67,6 +67,9 @@ function playRound(event)
     let computerScore = document.querySelector('.computer-score');
     let output = document.querySelector('.round-output');
     let matchResultOutput = document.querySelector('.match-result-output');
+    let roundNumber = document.querySelector('.round-number');
+
+    roundNumber.textContent = Number(roundNumber.textContent) + 1;
 
     // Display selections
     displaySelections(playerSelection, computerSelection);
