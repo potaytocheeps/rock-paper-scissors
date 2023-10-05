@@ -37,13 +37,30 @@ function compareSelections(playerSelection, computerSelection)
     return message;
 }
 
+function displaySelections(playerSelection, computerSelection)
+{
+    let playerSelectionElement = document.querySelector('.player-selection');
+    let computerSelectionElement = document.querySelector('.computer-selection');
+
+    playerSelectionElement.setAttribute('src', `./images/${playerSelection}-right.png`);
+    playerSelectionElement.setAttribute('alt', `Hand illustration in the shape of ${playerSelection}.`);
+
+    computerSelectionElement.setAttribute('src', `./images/${computerSelection}-left.png`);
+    computerSelectionElement.setAttribute('alt', `Hand illustration in the shape of ${computerSelection}.`);
+}
+
 function playRound(event)
 {
+    const playerSelection = event.target.id;
+    const computerSelection = getComputerChoice();
+    let roundResultMessage = compareSelections(playerSelection, computerSelection);
     let playerScore = document.querySelector('.player-score');
     let computerScore = document.querySelector('.computer-score');
-    let roundResultMessage = compareSelections(event.target.id, getComputerChoice());
     let output = document.querySelector('.output');
     let matchResultOutput = document.querySelector('.match-result-output');
+
+    // Display selections
+    displaySelections(playerSelection, computerSelection);
 
     // Update scores in the DOM
     if (roundResultMessage.toLowerCase().includes("win"))
