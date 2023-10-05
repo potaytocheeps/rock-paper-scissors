@@ -25,14 +25,16 @@ function compareSelections(playerSelection, computerSelection)
         case (playerSelection === "rock" && computerSelection === "scissors"):
         case (playerSelection === "paper" && computerSelection === "rock"):
         case (playerSelection === "scissors" && computerSelection === "paper"):
-            message = `You win! ${playerSelection} beats ${computerSelection}.`;
+            message = `You win! ${playerSelection.replace(playerSelection[0],
+                        playerSelection[0].toUpperCase())} beats ${computerSelection}.`;
             playerSelectionElement.classList.add('winning-selection');
             break;
         // Player loss conditions
         case (playerSelection === "rock" && computerSelection === "paper"):
         case (playerSelection === "paper" && computerSelection === "scissors"):
         case (playerSelection === "scissors" && computerSelection === "rock"):
-            message = `You lose! ${computerSelection} beats ${playerSelection}.`;
+            message = `You lose! ${computerSelection.replace(computerSelection[0],
+                        computerSelection[0].toUpperCase())} beats ${playerSelection}.`;
             computerSelectionElement.classList.add('winning-selection');
             break;
         // Draw condition
