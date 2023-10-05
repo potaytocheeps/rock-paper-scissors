@@ -60,6 +60,13 @@ function displaySelections(playerSelection, computerSelection)
     computerSelectionElement.setAttribute('alt', `Hand illustration in the shape of ${computerSelection}.`);
 }
 
+function resetClasses(output)
+{
+    output.classList.remove('win');
+    output.classList.remove('loss');
+    output.classList.remove('draw');
+}
+
 function playRound(event)
 {
     const playerSelection = event.target.id;
@@ -76,14 +83,23 @@ function playRound(event)
     // Display selections
     displaySelections(playerSelection, computerSelection);
 
+    // Reset classes
+    resetClasses(output);
+
     // Update scores in the DOM
     if (roundResultMessage.toLowerCase().includes("win"))
     {
         playerScore.textContent = Number(playerScore.textContent) + 1;
+        output.classList.add('win');
     }
     else if (roundResultMessage.toLowerCase().includes("lose"))
     {
         computerScore.textContent = Number(computerScore.textContent) + 1;
+        output.classList.add('loss');
+    }
+    else
+    {
+        output.classList.add('draw');
     }
 
     output.textContent = roundResultMessage;
@@ -101,10 +117,12 @@ function playRound(event)
         if (Number(playerScore.textContent) > Number(computerScore.textContent))
         {
             matchResultOutput.textContent = "Congratulations! You won the match!";
+            matchResultOutput.classList.add('win');
         }
         else
         {
             matchResultOutput.textContent = "You lost the match. Better luck next time!";
+            matchResultOutput.classList.add('loss');
         }
     }
 }

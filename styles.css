@@ -9,6 +9,7 @@ body {
   justify-content: center;
   text-align: center;
   background-color: #F8E7E6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -28,6 +29,7 @@ p {
   justify-content: space-around;
   gap: 36px;
   align-items: center;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .player-score-container,
@@ -93,6 +95,19 @@ img {
 .round-output-container {
   font-size: 25px;
   margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.loss {
+  color: #C4515C;
+}
+
+.win {
+  color: #009175;
+}
+
+.draw {
+  color: #FF836F;
 }
 
 
@@ -136,6 +151,7 @@ button:disabled {
 /* Output Section */
 
 .match-result-output-container {
-  margin: 30px 0;
+  margin: 60px 0;
   font-size: 30px;
+  font-weight: bold;
 }
